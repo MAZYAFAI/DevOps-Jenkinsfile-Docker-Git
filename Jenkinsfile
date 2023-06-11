@@ -10,7 +10,7 @@ pipeline {
               }
              // remove previous containerss
               
-                
+              sh "sudo docker rm -f `docker ps -aq`"
              // BUILD the Docker image
              sh "sudo docker build -t image-name:${commit_id} ."
              // SDEPLOYMENT:  Running docker container as my application   
